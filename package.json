@@ -5,7 +5,8 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "test": "jest"
+        "test": "jest",
+        "build": "echo 'No build step needed'" // Comando de build adicionado
     },
     "dependencies": {
         "compression": "^1.7.4",
@@ -34,3 +35,4 @@
         "supertest": "^6.3.4"
     }
 }
+
