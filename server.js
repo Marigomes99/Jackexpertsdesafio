@@ -1,37 +1,29 @@
-{
-    "name": "projeto-jack-experts",
-    "version": "1.0.0",
-    "description": "Um projeto para o Desafio Jack Experts",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js",
-        "test": "jest",
-        "build": "echo 'No build step needed'" // Comando de build adicionado
-    },
-    "dependencies": {
-        "compression": "^1.7.4",
-        "cors": "^2.8.5",
-        "dotenv": "^16.4.5",
-        "express": "^4.21.0",
-        "express-validator": "^7.2.0",
-        "helmet": "^5.0.2",
-        "jsonwebtoken": "^9.0.2",
-        "morgan": "^1.10.0",
-        "projeto-jack-experts": "file:"
-    },
-    "author": "Mari Gomes",
-    "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Marigomes99/projeto-jack-experts.git"
-    },
-    "keywords": [
-        "express",
-        "desafio",
-        "jack experts"
-    ],
-    "devDependencies": {
-        "jest": "^29.7.0",
-        "supertest": "^6.3.4"
-    }
-}
+// server.js
+const express = require('express');
+const dotenv = require('dotenv');
+const path = require('path'); // Importar o módulo 'path'
+const pageController = require('./controllers/pageController');
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Definir a pasta para arquivos estáticos
+app.use(express.static(path.join(__dirname, 'public'))); // Serve arquivos estáticos da pasta 'public'
+
+// Usando o controller de páginas
+app.use('/', pageController);
+
+// Rota para servir o arquivo HTML principal
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Altere para o caminho correto do seu arquivo HTML
+});
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
+
