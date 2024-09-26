@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: mari-app-config
-  labels:
-    app: mari-app
-    desafio: jackexperts
-data:
-  pageContent: {{ .Values.config.pageContent | quote }}  # Conteúdo da página referenciado no Deployment
