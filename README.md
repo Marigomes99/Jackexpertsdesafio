@@ -1,4 +1,4 @@
-# Desafio de Implementação de Aplicação com Helm, Kubernetes, Docker e AWS
+# Desafio: Aplicação simples com página HTML customizável, definida via Helm e hospedada em um cluster Kubernetes aws. 
 
 Olá, todos! Hoje vou compartilhar minha experiência em um desafio de DevOps onde implementei uma aplicação completa usando Helm, Kubernetes, Docker e AWS. Vou destacar o que foi mais fácil e o que enfrentei de maiores dificuldades durante o desenvolvimento.
 
