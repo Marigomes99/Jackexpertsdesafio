@@ -1,0 +1,13 @@
+image:
+  repository: projetojackexperts
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 3001
+
+replicaCount: 2
+
+config:
+  pageContent: "Conteúdo da página"
+  userName: "Usuário Exemplo"

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+body {
+    font-family: 'Honk', system-ui; /* Fonte principal */
+    background: linear-gradient(to bottom, #b0d8f1, #4c8c8c, #6c5d91, #6c9fc6, #3965a9); /* Fundo em degradê */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinhamento para o topo */
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar {
+    background: linear-gradient(to bottom, #b5cae3, #a35181, #83b8db, #b4c7e0); /* Degradê para a barra lateral */
+    color: white;
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    margin-right: 20px; /* Espaço entre a barra lateral e o conteúdo */
+    flex: 1; /* Ocupar espaço proporcionalmente */
+    max-width: 300px; /* Largura máxima da barra lateral */
+}
+
+.content {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    max-width: 1200px;
+    width: 80%;
+    background: linear-gradient(to bottom, #b5cae3, #a35181, #83b8db, #b4c7e0); /* Degradê para o conteúdo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.text-section {
+    text-align: center; /* Centraliza o texto */
+}
+
+.image {
+    max-width: 150px; /* Define a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 20px 0; /* Margem vertical em cima e embaixo */
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+}
+
+.footer {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente para o rodapé */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: smaller; /* Texto menor no rodapé */
+    border-radius: 10px; /* Bordas arredondadas */
+    margin-top: 20px; /* Espaço acima do rodapé */
+}
+
+.footer-text {
+    font-family: 'Honk', system-ui; /* Aplicando a fonte Honk ao rodapé */
+}
+
+.honk-text {
+    font-family: 'Honk', system-ui; /* Classe para usar a fonte Honk */
+    font-weight: 400; /* Peso da fonte */
+    font-style: normal; /* Estilo da fonte */
+}
+
+.center-text {
+    text-align: center; /* Centraliza o texto */
+}
+
+.center-image {
+    display: block; /* Faz a imagem ser um bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+        margin-top: 20px; /* Margem superior em telas pequenas */
+    }
+
+    .sidebar {
+        max-width: 100%; /* Largura total em telas pequenas */
+        margin-right: 0; /* Remove a margem à direita em telas pequenas */
+        margin-bottom: 20px; /* Espaço abaixo da barra lateral em telas pequenas */
+    }
+
+    .text-section {
+        max-width: 100%; /* Largura total em telas pequenas */
+        text-align: center; /* Alinha o texto ao centro em telas pequenas */
+    }
+
+    .image {
+        margin-left: 0; /* Remove a margem à esquerda em telas pequenas */
+        max-width: 100%; /* Imagem ocupa a largura total em telas pequenas */
+        margin-top: 20px; /* Espaço acima da imagem */
+    }
+
+    body {
+        padding: 10px; /* Adiciona espaço interno ao corpo */
+    }
+}

@@ -1,0 +1,50 @@
+body {
+    font-family: 'Arial', sans-serif; /* Alterado para uma fonte padrão */
+    background-color: #f3e1e3; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px; /* Adiciona um pouco de espaço interno */
+}
+
+.container > * {
+    margin-bottom: 15px; /* Adiciona espaço entre os elementos filhos */
+}
+
+.image {
+    max-width: 100%; 
+    height: auto; 
+    position: relative; /* Altera para relative para melhor controle */
+    margin-top: 20px; /* Adiciona espaço acima da imagem */
+}
+
+input[type="text"], input[type="email"], button {
+    display: block; /* Faz com que os inputs e o botão ocupem a largura total */
+    margin: 10px auto; /* Adiciona margens em cima e embaixo */
+    padding: 10px; /* Adiciona espaço interno */
+    width: 80%; /* Largura dos inputs e botão */
+    max-width: 400px; /* Largura máxima */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+button {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    border: none; /* Remover a borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+button:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 20px;
+    }
+}

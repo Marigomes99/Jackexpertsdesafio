@@ -1,0 +1,78 @@
+/* style.css */
+
+/* Define a cor de fundo geral da página */
+body {
+    background-color: #f5f5f5; /* Cor de fundo do projeto */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    color: #333; /* Cor do texto */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+}
+
+/* Container do iframe */
+.iframe-container {
+    box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-top: 1.6em; /* Espaçamento acima do iframe */
+}
+
+/* Estilo para o container do conteúdo */
+.container {
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+    z-index: 1; /* Garante que o conteúdo apareça sobre o iframe */
+}
+
+/* Estilos do link */
+.container a {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: #007BFF; /* Cor do link */
+    font-weight: bold; /* Negrito */
+}
+
+.container a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Estilo para o formulário */
+form {
+    background-color: #f9f9f9; /* Fundo do formulário */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    max-width: 500px; /* Aumenta a largura máxima do formulário */
+    margin: 20px auto; /* Centraliza o formulário */
+}
+
+/* Estilo dos campos de entrada */
+input[type="text"], input[type="email"] {
+    width: 100%; /* Largura total */
+    padding: 15px; /* Aumenta o espaçamento interno */
+    margin-bottom: 10px; /* Espaçamento abaixo dos campos */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Estilo do botão */
+button {
+    padding: 15px 20px; /* Aumenta o espaçamento interno do botão */
+    border: none; /* Sem borda */
+    background-color: #007BFF; /* Cor do botão */
+    color: white; /* Cor do texto */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .iframe-fixed {
+        height: 400px; /* Ajusta a altura em telas menores */
+    }
+    form {
+        max-width: 90%; /* Largura do formulário em telas menores */
+    }
+}

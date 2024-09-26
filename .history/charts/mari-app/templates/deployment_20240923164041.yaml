@@ -1,0 +1,21 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata: 
+   labels : 
+   app: mari-app
+   desafio: jackexperts
+
+spec: 
+    replicas: {{ .Values.replicaCount }}
+    selector:
+     matchlabels:
+       app: mari-app
+       ports: 
+       - containerPort {{.Values.service.port }}
+       env:
+       -name:
+
+       valueFrom:
+         configMapKeyRef:
+           name: mari-app-config
+           key: pageContent

@@ -1,0 +1,47 @@
+body {
+    font-family: 'sans-serif';
+    background: linear-gradient(135deg, #2e004f 0%, #3f0071 50%, #5a00b5 100%); /* Fundo synthwave */
+    color: white; /* Cor do texto */
+    margin: 0; 
+    padding: 0; 
+}
+
+.container {
+    display: flex; /* Usar flexbox para alinhar elementos */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Preencher a altura da tela */
+    padding: 20px; /* Adiciona um pouco de espaço interno */
+}
+
+.content {
+    display: flex; /* Usar flexbox para conteúdo */
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Largura do conteúdo */
+}
+
+.text-section {
+    flex: 1; /* Permite que o bloco de texto ocupe espaço disponível */
+    max-width: 50%; /* Limitar a largura do bloco de texto */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.image {
+    max-width: 100px; /* Define a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-left: 20px; /* Espaço à esquerda da imagem */
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+        margin-top: 20px; /* Margem superior em telas pequenas */
+    }
+
+    .image {
+        margin-left: 0; /* Remove a margem à esquerda em telas pequenas */
+        max-width: 100%; /* Imagem ocupa a largura total em telas pequenas */
+        margin-top: 20px; /* Espaço acima da imagem */
+    }
+}

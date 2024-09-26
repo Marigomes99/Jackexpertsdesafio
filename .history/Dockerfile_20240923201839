@@ -1,0 +1,29 @@
+# Imagem base do Node.js
+FROM node:18-alpine
+
+# Instalando o Skopeo e suas dependências
+RUN apk add --no-cache skopeo
+
+# Usuário não root
+RUN addgroup -S app && adduser -S appuser -G app
+
+# Diretório de trabalho
+WORKDIR /app
+
+# Copia os arquivos do projeto
+COPY package*.json ./
+
+# Instala as dependências
+RUN npm install --production
+
+# Copia o restante dos arquivos
+COPY . .
+
+# Altera o usuário para não root
+USER appuser
+
+# Expondo a porta da aplicação
+EXPOSE 3001
+
+# Comando para iniciar a aplicação
+CMD ["node", "server.js"]

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mari-app-ingress
+  labels:
+    app: mari-app
+    desafio: jackexperts
+spec:
+  tls:  # Configuração para TLS
+    - hosts:
+        - desafiojackexpertsmari.com.br  # Nome do host para o qual o TLS será aplicado
+      secretName: mari-app-tls  # Nome do Secret que contém o certificado TLS
+  rules:
+    - host: desafiojackexpertsmari.com.br  # Nome do host para o Ingress
+      http:
+        paths:
+          - path: /  # Caminho que o Ingress irá atender
+            pathType: Prefix  # Tipo de correspondência para o caminho
+            backend:
+              service:
+                name: mari-app  # Nome do serviço a ser encaminhado
+                port:
+                  number: {{ .Values.service.port }}  # Porta do serviço

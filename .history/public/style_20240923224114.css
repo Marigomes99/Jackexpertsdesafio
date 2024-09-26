@@ -1,0 +1,25 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f3e1e3; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px; /* Adiciona um pouco de espaço interno */
+}
+
+.image {
+    max-width: 100%; 
+    height: auto; 
+    position: relative; /* Altera para relative para melhor controle */
+    margin-top: 20px; /* Adiciona espaço acima da imagem */
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 20px;
+    }
+}

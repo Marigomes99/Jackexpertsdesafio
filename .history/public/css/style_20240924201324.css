@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #2e004f 0%, #3f0071 50%, #5a00b5 100%);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo com leve transparência */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.text-section {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    padding-right: 20px; /* Espaçamento adicional entre texto e imagem */
+}
+
+.image {
+    max-width: 150px; /* Define a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-left: 20px; /* Espaço à esquerda da imagem */
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+}
+
+.button {
+    background-color: #3f0071; /* Cor do botão */
+    color: white; /* Cor do texto */
+    padding: 12px 24px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transição suave */
+    margin-top: 20px; /* Espaço acima do botão */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para o botão */
+}
+
+.button:hover {
+    background-color: #5a00b5; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
+}
+
+.button:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 4px rgba(58, 0, 113, 0.5); /* Adiciona um destaque ao focar */
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+        margin-top: 20px; /* Margem superior em telas pequenas */
+    }
+
+    .text-section {
+        max-width: 100%; /* Largura total em telas pequenas */
+        text-align: center; /* Alinha o texto ao centro em telas pequenas */
+    }
+
+    .image {
+        margin-left: 0; /* Remove a margem à esquerda em telas pequenas */
+        max-width: 100%; /* Imagem ocupa a largura total em telas pequenas */
+        margin-top: 20px; /* Espaço acima da imagem */
+    }
+
+    body {
+        padding: 10px; /* Adiciona espaço interno ao corpo */
+    }
+}
+
+/* Estilo adicional para uma seção de destaque */
+.highlight {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center; /* Centraliza o conteúdo */
+}

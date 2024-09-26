@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mari-app
+spec:
+  replicas: {{ .Values.replicaCount }}  # Usando o valor de replicas
+  selector:
+    matchLabels:
+      app: mari-app
+  template:
+    metadata:
+      labels:
+        app: mari-app
+    spec:
+      containers:
+        - name: mari-app
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}  # Usando a imagem
+          ports:
+            - containerPort: {{ .Values.service.port }}  # Porta exposta do container
+          env:
+            - name: PAGE_CONTENT
+              value: {{ .Values.config.pageContent }}  # Passando o conteúdo da página como variável de ambiente
+            - name: USER_NAME
+              value: {{ .Values.config.userName }}  # Passando o nome de usuário como variável de ambiente

@@ -1,0 +1,11 @@
+replicaCount: 1  
+
+image:
+  repository: docker.io/marigomes/mari.app  
+  tag: v1.0.0  
+  pullPolicy: IfNotPresent  
+service:
+  type: LoadBalancer  o
+  port: 3000  
+config:
+  pageContent: "Conteúdo da página configurável" 

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: mari-app
+description: A Helm chart for mari-app for Kubernetes
+version: "0.1.0"

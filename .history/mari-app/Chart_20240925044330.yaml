@@ -1,0 +1,35 @@
+apiVersion: v2
+name: mari-app
+description: A Helm chart for mari-app for Kubernetes
+version: 0.1.0  # Versão do chart
+appVersion: "1.0.0"  # Versão da aplicação
+keywords:
+  - mari-app
+  - kubernetes
+  - helm
+  - application
+sources:
+  - https://github.com/Marigomes99
+maintainers:
+  - name: Mari Gomes
+    email: mariaaionvivi@gmail.com
+home: https://desafiojackexpertsmari.com.br  # URL da homepage da aplicação
+icon: https://www.flaticon.com/br/icone-gratis/grafico_2257295  # URL para um ícone do chart
+
+# Configurações de imagem
+image:
+  repository: projetojackexperts  # Nome da imagem
+  tag: latest  # Tag da imagem
+
+# Configurações de serviço
+service:
+  type: LoadBalancer  # Tipo de serviço
+  port: 3001  # Porta exposta pelo serviço
+
+# Configurações do Deployment
+replicaCount: 2  # Número de réplicas do Deployment
+
+# Configurações adicionais
+config:
+  pageContent: "Conteúdo da página"  # Exemplo de conteúdo da página
+  userName: "Usuário Exemplo"  # Exemplo de nome de usuário

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mari-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: mari-app  
+  template:
+    metadata:
+      labels:
+        app: mari-app
+    spec:
+      imagePullSecrets:
+        - name: meu-secret-docker  # Adicionando o secret
+      containers:
+        - name: mari-app
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: 3001  # A porta que o container vai escutar
+          env:
+            - name: PAGE_CONTENT
+              value: {{ .Values.config.pageContent | quote }}
+            - name: USER_NAME
+              value: {{ .Values.config.userName | quote }}

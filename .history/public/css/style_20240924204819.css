@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Jacquarda+Bastarda+9&display=swap');
+
+body {
+    font-family: 'Jacquarda Bastarda 9', serif; /* Fonte principal */
+    background-image: url('caminho/para/sua/imagem.jpg'); /* Substitua pelo caminho correto da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.honk-uniquifier {
+    font-family: "Honk", system-ui; /* Nova fonte aplicada */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "MORF" 15, "SHLN" 50; /* Configurações de variação */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar {
+    background: linear-gradient(135deg, #ff7f50, #00ced1, #4682b4);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.text-section {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.image {
+    max-width: 150px;
+    height: auto;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.footer {
+    background: linear-gradient(135deg, #ff7f50, #00ced1, #4682b4);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8em; /* Fonte menor para o rodapé */
+}
+
+.footer-text {
+    font-size: 0.8em; /* Tamanho de fonte menor para o rodapé */
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .sidebar {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .text-section {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .image {
+        margin-left: 0;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    body {
+        padding: 10px;
+    }
+}

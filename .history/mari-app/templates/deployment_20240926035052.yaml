@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mari-app
+  labels:
+    app: mari-app
+    desafio: jackexperts  # Adicionando a label requerida
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mari-app  
+  template:
+    metadata:
+      labels:
+        app: mari-app
+        desafio: jackexperts  # Adicionando a label requerida
+    spec:
+      containers:
+        - name: mari-app
+          image: marigomes/projetojackexperts:1.0  
+          ports:
+            - containerPort: 3001
+          env:
+            - name: PAGE_CONTENT
+              valueFrom:
+                configMapKeyRef:
+                  name: mari-app-config  # Nome do ConfigMap (a ser criado)
+                  key: pageContent
+            - name: USER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: mari-app-config  # Nome do ConfigMap (a ser criado)
+                  key: userName
+          imagePullPolicy: Always  
+          resources:                
+            requests:
+              memory: "256Mi"      
+              cpu: "500m"      
+            limits:
+              memory: "512Mi"     
+              cpu: "1"

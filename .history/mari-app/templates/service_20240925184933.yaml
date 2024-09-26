@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mari-app
+  labels:
+    app: mari-app
+spec:
+  type: NodePort  # Mudando para NodePort
+  ports:
+    - port: 3001              # Porta exposta pelo serviço
+      targetPort: 3001        # Porta onde o aplicativo está escutando dentro do pod
+      nodePort: 30001         # Porta específica (ou pode deixar em branco para o Kubernetes escolher uma)
+      protocol: TCP
+  selector:
+    app: mari-app  # Seleciona os pods que correspondem ao label 'app: mari-app'

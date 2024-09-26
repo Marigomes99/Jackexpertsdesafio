@@ -1,0 +1,16 @@
+apiVersion : networking.k8s.io/v1
+kind: Ingress
+metadata:
+   name: mari-app-ingress
+   spec:
+     rules:
+     - host: desafiojackexpertsmari.com.br
+     http:
+      paths:
+       -path: /
+       pathType: Prefix
+       backend:
+       service:
+          name: mari-app
+          port:
+          number: 3000

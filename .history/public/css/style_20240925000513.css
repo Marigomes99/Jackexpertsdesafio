@@ -1,0 +1,32 @@
+/* Define a cor de fundo geral da página */
+body {
+    background-color: #f5f5f5; /* Cor de fundo do projeto */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    color: #333; /* Cor do texto */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+    height: 100vh; /* Define a altura da página para ocupar a tela */
+    overflow: hidden; /* Remove rolagem da página */
+    display: flex; /* Usando flexbox para centralizar */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+}
+
+/* Estilo do contêiner da imagem */
+.image-container {
+    width: 80%; /* Ajuste a largura conforme necessário */
+    max-width: 800px; /* Limita a largura máxima */
+}
+
+/* Estilos da imagem */
+.image-fixed {
+    width: 100%; /* Largura total da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .image-fixed {
+        height: auto; /* Ajusta a altura em telas menores */
+    }
+}
