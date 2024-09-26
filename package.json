@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node server.js",
         "test": "jest",
-        "build": "echo 'No build step needed'" // Comando de build adicionado
+        "build": "echo 'No build step needed'" // Verifique se este comando é apropriado
     },
     "dependencies": {
         "compression": "^1.7.4",
@@ -16,8 +16,7 @@
         "express-validator": "^7.2.0",
         "helmet": "^5.0.2",
         "jsonwebtoken": "^9.0.2",
-        "morgan": "^1.10.0",
-        "projeto-jack-experts": "file:"
+        "morgan": "^1.10.0"
     },
     "author": "Mari Gomes",
     "license": "ISC",
