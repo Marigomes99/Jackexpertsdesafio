@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node server.js",
         "test": "jest",
-        "build": "echo 'No build step needed'" // Verifique se este comando é apropriado
+        "build": "echo 'No build step needed'" 
     },
     "dependencies": {
         "compression": "^1.7.4",
@@ -34,4 +34,5 @@
         "supertest": "^6.3.4"
     }
 }
+
 
