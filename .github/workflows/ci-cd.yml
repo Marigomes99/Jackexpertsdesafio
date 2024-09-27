@@ -18,7 +18,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Considere usar a versão LTS
+          node-version: 'lts'  # Use a versão LTS mais recente
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm install
@@ -27,12 +35,12 @@ jobs:
         run: npm test
 
       - name: Build Docker image
-        run: docker build . -t marigomes/mari.app:v1.0.0
+        run: docker build . -t marigomes/mari.app:${{ github.sha }}
 
       - name: Push Docker image to Docker Hub
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-          docker push marigomes/mari.app:v1.0.0
+          docker push marigomes/mari.app:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -52,3 +60,4 @@ jobs:
           kubectl apply -f k8s/service.yaml
           kubectl apply -f k8s/ingress.yaml
           kubectl apply -f k8s/configmap.yaml
+
