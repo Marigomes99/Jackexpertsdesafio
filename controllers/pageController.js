@@ -1,13 +1,14 @@
 // controllers/pageController.js
 const express = require('express');
 const { body, validationResult } = require('express-validator');
-const app = express();
+const router = express.Router(); // Use router ao invés de app
 
-app.use(express.json()); // Para suportar JSON no corpo das requisições
-app.use(express.urlencoded({ extended: true })); // Para suportar dados de formulários
+// Middleware para suportar JSON e dados de formulários
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
 
 // Rota principal
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     try {
         // Renderize sua página HTML aqui (exemplo)
         const page = `<h1>${process.env.USER_NAME}</h1><p>${process.env.PAGE_CONTENT}</p>`;
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 // Rota de submissão
-app.post('/submit', [
+router.post('/submit', [
     body('name').notEmpty().withMessage('Nome é obrigatório'),
     body('email').isEmail().withMessage('Email inválido')
 ], (req, res) => {
@@ -34,4 +35,6 @@ app.post('/submit', [
     res.send('Dados recebidos com sucesso!');
 });
 
-module.exports = app; // Exporta a instância do aplicativo
+// Exporte o router
+module.exports = router; // Exporta o router
+
