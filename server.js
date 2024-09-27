@@ -1,7 +1,7 @@
 // server.js
 const express = require('express');
 const dotenv = require('dotenv');
-const path = require('path'); // Importar o módulo 'path'
+const path = require('path');
 const pageController = require('./controllers/pageController');
 
 dotenv.config();
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Definir a pasta para arquivos estáticos
-app.use(express.static(path.join(__dirname, 'public'))); // Serve arquivos estáticos da pasta 'public'
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Usando o controller de páginas
 app.use('/', pageController);
