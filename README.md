@@ -110,6 +110,9 @@ Para monitorar a aplicação, você pode utilizar ferramentas como:
 Prometheus: Monitoramento de métricas.
 Grafana: Visualização de métricas.
 EFK Stack (Elasticsearch, Fluentd, Kibana): Centralização de logs.
+
+## Domínio
+O domínio foi criado no Hostinger e está acessível em: [desafiojackexpertsmari.shop](http://desafiojackexpertsmari.shop). A configuração de DNS está sendo gerenciada pelo Route 53.
 Conclusão
 Este projeto demonstra o uso de tecnologias modernas de DevOps, como Docker, Kubernetes, Helm e AWS, para criar uma aplicação escalável e configurável. Sinta-se à vontade para explorar o código e contribuir com melhorias!
 
